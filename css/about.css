@@ -1,0 +1,861 @@
+html,
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* nav */
+.navbar {
+    background: #111 !important;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #fff !important;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #bbb !important;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #CE7D63 !important;
+}
+
+.btn-main {
+    background: #CE7D63;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #fff;
+    transition: black 0.3s;
+}
+
+.btn-main:hover {
+    background: #ff6f47;
+}
+
+
+.card {
+    background-color: #222;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    height: 100%;
+}
+
+/* nums */
+.stat-box {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-box .number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #CE7D63;
+}
+
+.stat-box .label {
+    color: white;
+}
+
+/* achievements */
+
+.achievement-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.achievement-card .card-header {
+    padding: 12px 20px;
+    border-bottom: 1px solid #333;
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.achievement-card .card-body {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.achievement-card .card-body h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.achievement-card .card-footer {
+    padding: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+.section-header-wrapper {
+    background-color: #3A3A3A;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.view-all-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* first */
+.team-section {
+    background-color: #1a1a1a;
+    padding: 50px 0;
+}
+
+.team-container {
+    max-width: 1320px;
+    margin: auto;
+    /*  */
+    border: 1px solid #333;
+    border-radius: 8px;
+    /*  */
+    padding: 40px;
+}
+
+.team-header {
+    border-bottom: 1px solid #333;
+    padding-bottom: 25px;
+    margin-bottom: 30px !important;
+}
+
+.team-section h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.member-card {
+    background-color: #212121;
+    border: none;
+    padding: 20px;
+}
+
+.member-image-wrapper {
+    background-color: #e5b9a4;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.member-image-wrapper img {
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.member-card h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.member-card p {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #e5b9a4;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.social-icons a:hover {
+    color: #f0c9b7;
+}
+
+/* Awards Section */
+
+.award-card,
+.testimonial-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.award-card .date-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.award-card .date {
+    background: #222;
+    border-radius: 30px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.award-card .icon {
+    background: #333;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.award-card .date {
+    font-size: 13px;
+    color: #aaa;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.award-card h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.award-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Testimonials Section */
+.testimonial-card h5 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+
+.testimonial-footer .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.testimonial-footer img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.testimonial-footer .name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.testimonial-footer .role {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.arrow {
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+
+
+/*     */
+
+.muted {
+    color: #a7a7a7;
+}
+
+/* feq que */
+.faq-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid #262626;
+    border-radius: 12px;
+}
+
+.faq-answer {
+    margin-top: 10px;
+    padding: 12px 16px;
+    font-size: .9rem;
+    color: #a7a7a7;
+    border-left: 2px solid #262626;
+}
+
+.form-control,
+.form-textarea {
+    background: #0f1012;
+    border: 1px solid #262626;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: .95rem;
+}
+
+.form-control::placeholder,
+.form-textarea::placeholder {
+    color: #6d727a
+}
+
+.form-control:focus,
+.form-textarea:focus {
+    border-color: #3a3f45;
+    box-shadow: none;
+    outline: none;
+}
+
+/* faq cards */
+.faq-card {
+    background: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-card:hover {
+    background: #222;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.faq-answer {
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+    color: #bbb;
+}
+
+.faq-card.active .faq-answer {
+    display: block;
+}
+
+.faq-card.active .faq-icon::after {
+    content: "−";
+}
+
+.faq-icon::after {
+    content: "+";
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+/* form */
+.faq-form {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.faq-form input,
+.faq-form textarea {
+    background: #0f0f0f;
+    border: none;
+    color: #fff;
+}
+
+.faq-form input:focus,
+.faq-form textarea:focus {
+    background: #0f0f0f;
+    color: #fff;
+    box-shadow: none;
+}
+
+.faq-form button {
+    background: #CE7D63;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .frame {
+     width: 100%;
+     max-width: 1460px;
+     height: auto;
+     margin: 20px auto;
+     background: transparent;
+     border-radius: 10px;
+     position: relative;
+     overflow: visible;
+     border: 2px solid #1a1a1a;
+     font-family: "Roboto Flex", sans-serif;
+ }
+
+ /* CTA banner */
+ .cta {
+     background: #CE7D63;
+     border-radius: 14px;
+     padding: 80px;
+     display: flex;
+     align-items: flex-start;
+     justify-content: space-between;
+     gap: 16px;
+     flex-wrap: wrap;
+     height: 305px;
+ }
+
+ .container {
+     padding: 8px;
+ }
+
+ /* keep your existing small container class behavior */
+
+ .cta h2 {
+     margin: 0;
+     font-size: clamp(20px, 2.6vw, 42px);
+     letter-spacing: 1px;
+     color: #0f0f0f;
+ }
+
+ .cta p {
+     margin: 14px 0 0;
+     max-width: 880px;
+     color: #231815;
+     font-size: clamp(14px, 1.4vw, 16px);
+ }
+
+ .btn img{
+    margin-left: auto;
+ }
+
+ .cta .btn {
+     background: #0f0f0f;
+     color: #F3DFD8;
+     border: none;
+     padding:18px;
+     border-radius: 12px;
+     font-weight: 600;
+     cursor: pointer;
+     height: 64px;
+     font-size: 18px;
+     display: flex;
+     width: 224px;
+ }
+
+ /* TICKER */
+ .ticker {
+     margin: 10px 0;
+     background: #1a1a1a;
+     border-radius: 8px;
+     border: 2px solid #1a1a1a;
+     padding: 12px;
+     color: #8f8f8f;
+     font-weight: 600;
+     letter-spacing: 2px;
+     white-space: nowrap;
+     overflow: hidden;
+     font-family: "Roboto Mono", monospace;
+     height: 56px;
+ }
+
+ .ticker span {
+     margin: 0 10px;
+ }
+
+ .dot {
+     color: #ce7d63;
+ }
+
+ /* CARDS grid */
+ .cards {
+     display: grid;
+     grid-template-columns: 1fr 1fr 3fr;
+     gap: 10px;
+     margin-top: 10px;
+     
+ }
+
+ .card {
+     background: #1a1a1a;
+     border-radius: 10px;
+     border: 1px solid #1c1c1c;
+     padding: 20px;
+     min-height: 165px;
+     position: relative;
+     height: 267px;
+ }
+
+ .card .icon {
+     width: 40px;
+     height: 40px;
+     display: grid;
+     place-items: center;
+     background: #1f1f1f;
+     border-radius: 10px;
+     margin-bottom: 30px;
+     font-size: 20px;
+ }
+
+ .card h3 {
+     margin: 0 0 8px;
+     font-size: 22px;
+     letter-spacing: .3px;
+     color: #F3DFD8;
+ }
+
+ .card p {
+     font-size: 16px;
+     margin: 0;
+     color: #81807E;
+ }
+
+ .card .jump {
+     position: absolute;
+     right: 18px;
+     top: 18px;
+     width: 30px;
+     height: 30px;
+     display: grid;
+     place-items: center;
+ }
+
+ /* LINKS area */
+ .links-row {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+     gap: 10px;
+     padding: 40px;
+     background-color: #1a1a1a;
+     border-radius: 16px;
+     height: 267px;
+
+ }
+
+ .links-col h4 {
+     margin: 0 0 14px;
+     font-size: 20px;
+     letter-spacing: 1px;
+     color: #f9efec;
+     font-family: "Roboto Mono", monospace;
+ }
+
+ .links-col ul {
+     list-style: none;
+     display: grid;
+     gap: 12px;
+     color: #b3b3b3;
+     font-weight: 500;
+ }
+
+ .chip {
+     display: inline-block;
+     padding: 3px 8px;
+     background: #262626;
+     border-radius: 6px;
+     font-size: 12px;
+     margin-left: 8px;
+     color: #cccccc;
+ }
+
+ /* newsletter */
+ .newsletter {
+     background: #1a1a1a;
+     border: 1px solid #1c1c1c;
+     border-radius: 16px;
+     padding: 18px;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     height: 148px;
+     flex-wrap: wrap;
+ }
+
+ .newsletter .field {
+     width: 100%;
+     max-width: 266px;
+     height: 52px;
+     background: #1a1a1a;
+     border: none;
+     border-bottom: #676665 solid;
+     padding: 12px 14px;
+     color: #676665;
+     font-size: 16px;
+ }
+ .send{
+    background-color: #1a1a1a;
+    border: none;
+ }
+
+ /* bottom footer */
+ .bottom {
+     background: #1a1a1a;
+     border: 1px solid #1c1c1c;
+     border-radius: 16px;
+     padding: 24px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: -110px;
+     color: #b3b3b2;
+     font-size: 14px;
+     font-family: "Roboto Mono", monospace;
+     height: 101px;
+     flex-wrap: wrap;
+ }
+
+ .links a {
+     color: #b3b3b2;
+     text-decoration: none;
+     margin-left: 12px;
+ }
+
+ /* ================== MEDIA QUERIES ================== */
+ /* large desktop (keep similar to original) */
+ @media (min-width: 1600px) {
+     .section-wrapper {
+         padding: 0 40px;
+     }
+ }
+
+ /* laptop / desktop adjustments */
+ @media (max-width: 1200px) {
+     .header {
+         padding: 48px 32px;
+         gap: 18px;
+     }
+
+     .head-img {
+         max-width: 420px;
+     }
+
+     .features-grid {
+         gap: 14px;
+     }
+
+     .showcase-grid1 {
+         gap: 10px;
+     }
+
+     .test-grid {
+         gap: 10px;
+     }
+
+     .faq-container {
+         grid-template-columns: 1fr;
+     }
+
+     /* stack FAQ and form on narrower widths */
+ }
+
+ /* tablet */
+ @media (max-width: 992px) {
+     .header {
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 36px 24px;
+         gap: 18px;
+     }
+
+     .title {
+         width: 100%;
+     }
+
+     .head-img {
+         width: 100%;
+         max-width: 520px;
+         margin: 0 auto;
+     }
+
+     .features-title {
+         text-align: left;
+         padding: 30px;
+     }
+
+     .showcase-grid1 {
+         grid-template-columns: 1fr;
+     }
+
+     .cards {
+         grid-template-columns: 1fr;
+     }
+
+     .cta {
+         flex-direction: column;
+         align-items: stretch;
+     }
+
+     .faq-container {
+         grid-template-columns: 1fr;
+     }
+
+     .book {
+         max-width: 100%;
+     }
+ }
+
+ /* mobile */
+ @media (max-width: 600px) {
+     .header {
+         padding: 24px 18px;
+         margin-top: 60px;
+     }
+
+     .header h1 {
+         font-size: 26px;
+         margin-top: 20px;
+     }
+
+     .start {
+         top: -8px;
+     }
+
+     .features-grid {
+         grid-template-columns: 1fr;
+         gap: 12px;
+         padding: 0 6px;
+     }
+
+     .showcase-grid1 {
+         gap: 12px;
+         padding: 8px;
+     }
+
+     .test-grid {
+         grid-template-columns: 1fr;
+         gap: 12px;
+     }
+
+     .team {
+         gap: 6px;
+     }
+
+     .team img {
+         width: 36px;
+         height: 36px;
+     }
+
+     .faq-right {
+         padding: 18px;
+     }
+
+     .cta h2 {
+         font-size: 20px;
+     }
+
+     .ticker {
+         font-size: 12px;
+         height: 48px;
+     }
+
+     .newsletter {
+         gap: 8px;
+         padding: 12px;
+     }
+
+     .bottom {
+         padding: 16px;
+         margin-top: 12px;
+     }
+ }
+
+ /* very small phones */
+ @media (max-width: 420px) {
+     .header h1 {
+         font-size: 22px;
+     }
+
+     .features-title {
+         font-size: 18px;
+         padding: 20px;
+     }
+
+     .cta p {
+         font-size: 13px;
+     }
+
+     .book {
+         height: 56px;
+         padding: 12px;
+     }
+ }

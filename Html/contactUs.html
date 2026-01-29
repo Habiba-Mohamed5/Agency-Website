@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NexGen — Full Page</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- intl-tel-input CSS (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --panel:#1a1a1a;
+      --panel-2:#111;
+      --muted:#a8a8a8;
+      --muted-2:#bdbdbd;
+      --line:#2a2a2a;
+      --brand:#d07f6a; /* orange/terra */
+      --card-radius:14px;
+    }
+
+    html,body { height:100%; }
+    body {
+      margin:30px;
+      background: var(--bg);
+      color: #fff;
+      font-family: "Inter", Arial, sans-serif;
+     
+    }
+
+    /* ---------- NAVBAR ---------- */
+    
+#header .navbar {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .875rem 1.375rem;
+    background: #1a1a1a;
+    border-radius: .875rem;
+    position: relative;
+}
+
+#header .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e0d0c9;
+    white-space: nowrap;
+}
+
+#header .navbar .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e0d0c9;
+}
+
+#header .navbar .nav-links {
+    display: flex;
+    gap: .9375rem;
+}
+
+#header .navbar .nav-links a {
+    text-decoration: none;
+    color: #777;
+    background: #101010;
+    padding: .625rem 1.125rem;
+    border-radius: .75rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#header .navbar .nav-links a:hover:not(.contact) {
+    color: #e0d0c9;
+    background: #191919;
+}
+
+#header .navbar .nav-links a.active {
+    color: #e0d0c9;
+    background: #0a0a0a;
+}
+
+#header .navbar .nav-links a.contact {
+    background: #CE7D63;
+    color: #111;
+    font-weight: bold;
+}
+
+#header .navbar .nav-links a.contact:hover {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width:900px) {
+    #header .navbar {
+        position: relative;
+    }
+
+    #header .navbar .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        color: white;
+        border-radius: .625rem;
+        padding-inline: .625rem;
+        padding-block: .625rem;
+    }
+
+    #header .navbar .nav-links {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #1a1a1a;
+        padding: .75rem;
+        border-radius: .875rem;
+        display: none;
+        gap: .625rem;
+        z-index: 999;
+    }
+
+    #header .navbar .nav-links.open {
+        display: flex;
+    }
+
+    #header .navbar .nav-links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+    /* ---------- MAIN (GET IN TOUCH + STATS) ---------- */
+    .container-fluid.main-container { padding-left: 28px; padding-right:28px; }
+    .left-box {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 40px;
+      position: relative;
+      min-height: 280px;
+    }
+    .headline { font-size: 2.6rem; font-weight:700; line-height:1.05; }
+    .headline-top { display:flex; gap:16px; align-items:center; }
+    .start-btn {
+      display:flex; align-items:center; gap:10px; cursor:pointer;
+      color: var(--brand); background:transparent; border:0; font-weight:700;
+    }
+    .circle {
+      width:38px; height:38px; border-radius:50%; border:2px solid var(--brand);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .left-box p { color:#9b9b9b; margin-top:16px; }
+
+    .tags {
+      position:absolute; left:20px; right:20px; bottom:16px;
+      background: #0f0f0f; border-radius:10px; padding:10px;
+      display:flex; gap:12px; overflow-x:auto; color:var(--muted-2); font-size:13px;
+    }
+
+    .stat-card {
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 20px;
+      text-align:center;
+    }
+    .stat-card h2 { color: var(--brand); font-size:26px; margin:0; }
+    .stat-card p { color:var(--muted-2); font-size:13px; margin-top:8px; }
+
+    /* ---------- CONTACT SECTION ---------- */
+    .contact-box { background: var(--panel); border-radius: 12px; padding: 22px; }
+    .nav-pills .nav-link { background:#222; color:var(--muted-2); border-radius:8px; margin-right:6px; }
+    .nav-pills .nav-link.active { background:var(--brand); color:#fff; }
+    .form-control { background:#0f0f0f; border:1px solid #222; color:#ddd; border-radius:8px; }
+    .btn-custom { background:var(--brand); color:#000; border-radius:8px; font-weight:700; }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials-box { background: var(--panel-2); border-radius: 16px; padding: 20px; }
+    .testimonial-card {
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 22px;
+      min-height: 200px;
+      position: relative;
+      display:flex; flex-direction:column;
+    }
+    .testimonial-card h5 { font-size:15px; text-transform:uppercase; margin:0 0 10px; }
+    .testimonial-card p { color:var(--muted); font-size:14px; flex:1; }
+    .testimonial-card .meta { display:flex; align-items:center; gap:12px; margin-top:12px; }
+    .testimonial-card .meta img { width:44px; height:44px; border-radius:50%; object-fit:cover; }
+    .testimonial-card .arrow-btn {
+      position:absolute; right:16px; bottom:16px; width:42px; height:42px; border-radius:50%;
+      border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:#ddd;
+    }
+
+    /* ---------- FAQ (like screenshot) ---------- */
+    .faq-wrap { background: var(--panel-2); border-radius: 16px; padding: 26px; }
+    .faq-heading { font-weight:800; font-size:28px; letter-spacing:.4px; }
+    .faq-viewall { color:var(--muted-2); text-decoration:none; font-size:14px; display:flex; align-items:center; gap:10px; }
+    .faq-item { background:#171717; padding:16px; border-radius:10px; margin-bottom:12px; border:1px solid #202020; }
+    .faq-q { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:15px; color:#eaeaea; margin:0; }
+    .faq-toggle { width:36px; height:36px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:#ddd; }
+    .faq-a { display:none; color:var(--muted); margin-top:12px; border-top:1px solid #202020; padding-top:12px; font-size:14px; }
+    .faq-item.active .faq-a { display:block; }
+    .faq-item.active .faq-toggle { color:#fff; border-color:#3a3a3a; }
+
+    .faq-form-card { background:#151515; padding:18px; border-radius:10px; border:1px solid #1e1e1e; }
+    .faq-label { color:#9b9b9b; font-size:12px; text-transform:uppercase; margin-bottom:8px; }
+    .faq-input { background:#0f0f0f; border:1px solid #2a2a2a; color:#eee; border-radius:8px; padding:12px 14px; }
+
+    /* ---------- CTA BANNER ---------- */
+    .cta-banner {
+      background: var(--brand); border-radius:12px; margin: 26px 20px; padding: 28px 30px; display:flex; justify-content:space-between; align-items:center;
+    }
+    .cta-banner h3 { margin:0; color:#0f0f0f; font-size:30px; font-weight:700; }
+    .cta-banner p { margin:6px 0 0; color:#231b1a; font-size:13px; max-width:700px; }
+    .cta-btn { background:#0f0f0f; color:#fff; border-radius:8px; padding:10px 16px; border:0; }
+
+    /* ---------- SOCIAL TICKER ---------- */
+    .social-ticker { background:#111; margin: 12px 20px; padding:10px; border-radius:10px; color:var(--muted-2); font-size:13px; overflow:hidden; white-space:nowrap; }
+    .social-ticker .ticker-track { display:inline-block; animation: ticker 18s linear infinite; }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%);} }
+
+    /* ---------- FOOTER ---------- */
+    footer { margin: 20px; }
+    .footer-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:18px; align-items:start; }
+    .social-cards { display:grid; grid-template-columns: repeat(2,1fr); gap:18px; }
+    .social-card {
+      background:#111; padding:18px; border-radius:10px; position:relative; border:1px solid #1e1e1e;
+    }
+    .social-card .icon { width:44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line); margin-bottom:12px; color:var(--brand); }
+    .social-card h5 { margin:0 0 8px; font-size:16px; }
+    .social-card p { color:var(--muted); font-size:13px; margin:0; }
+    .social-card .card-arrow { position:absolute; right:14px; top:14px; width:36px; height:36px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:#ddd; }
+    .links-card { background:#111; padding:18px; border-radius:10px; border:1px solid #1e1e1e; }
+    .links-card ul { list-style:none; padding:0; margin:0; color:var(--muted); font-size:14px; }
+    .links-card li { margin-bottom:8px; }
+
+    .newsletter {
+      background:#111; padding:18px; border-radius:10px; display:flex; gap:12px; align-items:center; border:1px solid #1e1e1e;
+    }
+    .newsletter input { flex:1; background:transparent; border:0; color:#ddd; padding:12px; outline:none; }
+    .newsletter .subscribe-btn { width:44px; height:44px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:#ddd; }
+
+    .footer-bottom { background:#111; margin-top:18px; padding:18px; border-radius:10px; border:1px solid #1e1e1e; color:var(--muted); display:flex; justify-content:space-between; align-items:center; font-size:13px; }
+
+    /* Responsiveness */
+    @media (max-width: 991px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .social-cards { grid-template-columns: 1fr 1fr; }
+      .cta-banner { flex-direction:column; gap:12px; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">NexGen</div>
+            <button class="menu-toggle" aria-label="Toggle menu" type="button">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="10" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html">HOME</a>
+                <a href="services page.html">SERVICES</a>
+                <a href="project.html">PROJECTS</a>
+                <a href="about.html">ABOUT</a>
+                <a href="careersPage .html">CAREERS</a>
+                <a href="blogsPage.html" class="active">BLOGS</a>
+                <a href="contactUs.html" class="contact">CONTACT US</a>
+            </div>
+        </nav>
+    </header>
+  <!-- MAIN -->
+  <div class="container-fluid main-container px-4">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="left-box">
+          <div class="headline">
+            <div class="headline-top">
+              GET IN TOUCH
+              <button class="start-btn" aria-label="start project">
+                <span class="circle" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="12" x2="20" y2="12"/>
+                    <polyline points="14 6 20 12 14 18"/>
+                  </svg>
+                </span>
+                START A PROJECT
+              </button>
+            </div>
+            WITH US TODAY!
+          </div>
+          <p>
+            At NexGen, we value your inquiries, feedback, and collaborations. Whether you are interested in our digital services,
+            have questions about our projects, or want to explore potential partnerships, we encourage you to reach out to our dedicated team.
+          </p>
+          <div class="tags">
+            <span>MARKETING</span>
+            <span>WEBSITE DESIGN</span>
+            <span>BRANDING</span>
+            <span>WEBSITE DEVELOPMENT</span>
+            <span>MOBILE APP DEVELOPMENT</span>
+            <span>DIGITAL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="row g-3">
+          <div class="col-6"><div class="stat-card"><h2>200+</h2><p>Clients</p></div></div>
+          <div class="col-6"><div class="stat-card"><h2>280+</h2><p>Projects</p></div></div>
+          <div class="col-6"><div class="stat-card"><h2>100%</h2><p>Happy Clients</p></div></div>
+          <div class="col-6"><div class="stat-card"><h2>420K</h2><p>Followers</p></div></div>
+          <div class="col-6"><div class="stat-card"><h2>10+</h2><p>Years</p></div></div>
+          <div class="col-6"><div class="stat-card"><h2>↓</h2><p>Reach Us</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="contact-box">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item"><button class="nav-link" id="pills-phone-tab" data-bs-toggle="pill" data-bs-target="#pills-phone" type="button">Phone Number</button></li>
+            <li class="nav-item"><button class="nav-link active" id="pills-email-tab" data-bs-toggle="pill" data-bs-target="#pills-email" type="button">Emails</button></li>
+            <li class="nav-item"><button class="nav-link" id="pills-office-tab" data-bs-toggle="pill" data-bs-target="#pills-office" type="button">Office Locations</button></li>
+          </ul>
+
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade" id="pills-phone">+91 98765 43210<br>+91 91234 56789</div>
+            <div class="tab-pane fade show active" id="pills-email">
+              <strong>General Inquiries:</strong> info@nexgen.com<br>
+              <strong>Business Collab:</strong> partnerships@nexgen.com<br>
+              <strong>Careers:</strong> careers@nexgen.com
+            </div>
+            <div class="tab-pane fade" id="pills-office">
+              India Office: XYZ Street, Mumbai<br>USA: 123 Silicon Valley, California
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="contact-box">
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label">First Name</label><input type="text" class="form-control" placeholder="Enter First Name"></div>
+              <div class="col-md-6"><label class="form-label">Last Name</label><input type="text" class="form-control" placeholder="Enter Last Name"></div>
+              <div class="col-md-6"><label class="form-label">Email</label><input type="email" class="form-control" placeholder="Enter your Email"></div>
+              <div class="col-md-6"><label class="form-label">Phone Number</label><input id="phone" type="tel" class="form-control" placeholder="Enter Phone Number"></div>
+              <div class="col-12"><label class="form-label">Message</label><textarea class="form-control" rows="4" placeholder="Enter your Message"></textarea></div>
+              <div class="col-12"><div class="form-check"><input class="form-check-input" type="checkbox" id="terms"><label class="form-check-label" for="terms">I agree with Terms of Use and Privacy Policy</label></div></div>
+              <div class="col-12"><button type="submit" class="btn btn-custom w-100">SEND YOUR MESSAGE →</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- TESTIMONIALS -->
+<div class="container my-5">
+  <div class="testimonials-box">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-bold">TESTIMONIALS</h2>
+      <a href="#" class="all-link d-flex align-items-center" style="gap:10px; color:var(--muted-2); text-decoration:none;">
+        <span style="display:inline-block; width:42px; height:42px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="9 7 17 7 17 15"/></svg>
+        </span>
+        ALL TESTIMONIALS
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="testimonial-card">
+          <h5>NEXGEN TURNED OUR BUSINESS AROUND!</h5>
+          <p>Their digital marketing strategies helped us reach new customers and increase our revenue by 30% within just a few months. Highly recommended!</p>
+          <div class="meta">
+            <img src="../images/contact/Image (7).png" alt="Client 1">
+            <div><strong>Sarah Thompson</strong><br><small class="text-muted">CEO of BlueBloom</small></div>
+          </div>
+          <a class="arrow-btn" href="#" aria-label="open"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="testimonial-card">
+          <h5>NEXGEN TURNED OUR BUSINESS AROUND!</h5>
+          <p>Their digital marketing strategies helped us reach new customers and increase our revenue by 30% within just a few months. Highly recommended!</p>
+          <div class="meta">
+            <img src="../images/contact/Image (8).png" alt="Client 2">
+            <div><strong>Wade Warren</strong><br><small class="text-muted">Art Director</small></div>
+          </div>
+          <a class="arrow-btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="testimonial-card">
+          <h5>WORKING WITH NEXGEN WAS A PLEASURE.</h5>
+          <p>Their web design team created a stunning website that perfectly captured our brand's essence. The feedback from our customers has been overwhelmingly positive.</p>
+          <div class="meta">
+            <img src="../images/contact/Image (9).png" alt="Client 3">
+            <div><strong>Lisa Williams</strong><br><small class="text-muted">CEO of HealthTech</small></div>
+          </div>
+          <a class="arrow-btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="testimonial-card">
+          <h5>NEXGEN'S WEB DESIGN TEAM BROUGHT OUR VISION TO LIFE.</h5>
+          <p>Their responsive design ensures our website looks stunning on all devices, contributing to increased user engagement.</p>
+          <div class="meta">
+            <img src="../images/contact/Image (10).png" alt="Client 4">
+            <div><strong>Jennifer Lee</strong><br><small class="text-muted">COO of Foodie Haven</small></div>
+          </div>
+          <a class="arrow-btn" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  <!-- FAQ SECTION -->
+  <div class="container my-5">
+    <div class="faq-wrap">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="faq-heading m-0">FREQUENTLY ASKED QUESTIONS</h2>
+        <a class="faq-viewall" href="#"><span style="display:inline-block; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="9 7 17 7 17 15"/></svg></span> VIEW ALL</a>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="faq-item active">
+            <div class="faq-q">
+              <span>How long does it take to complete a web development project?</span>
+              <span class="faq-toggle">−</span>
+            </div>
+            <div class="faq-a">The timeline varies depending on the project's complexity and requirements. Our team strives to deliver projects on time while maintaining the highest quality standards.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>Can you handle large-scale mobile app development projects?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">Yes — modular architectures, microservices and CI/CD pipelines help us scale.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>Can you integrate third-party APIs into our mobile app?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">We integrate payment, maps, social logins, analytics and more — securely.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>How do you ensure cross-platform compatibility for mobile apps?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">Testing on device farms, responsive UI patterns and platform-specific optimizations.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">
+              <span>What is your approach to user experience (UX) design?</span>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-a">Research-led design, prototyping and iterative usability testing to achieve clarity.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="faq-form-card">
+            <div class="mb-3">
+              <div class="faq-label">NAME</div>
+              <input class="faq-input form-control" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+              <div class="faq-label">EMAIL</div>
+              <input class="faq-input form-control" placeholder="Enter your email">
+            </div>
+            <div class="mb-4">
+              <div class="faq-label">YOUR QUESTION</div>
+              <textarea class="faq-input form-control" rows="5" placeholder="Enter Your Question Here ....."></textarea>
+            </div>
+            <button class="faq-send btn" type="button">SEND YOUR MESSAGE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner container">
+    <div>
+      <h3>READY TO TRANSFORM YOUR DIGITAL PRESENCE?</h3>
+      <p>Take the first step towards digital success with NexGen by your side. Our team of experts is eager to craft tailored solutions that drive growth for your business.</p>
+    </div>
+    <div>
+      <button class="cta-btn">GET IN TOUCH <i class="fa-solid fa-arrow-up-right-from-square ms-2"></i></button>
+    </div>
+  </section>
+
+  <!-- Social ticker -->
+  <div class="social-ticker container">
+    <div class="ticker-track">
+      FOLLOW US ON SOCIAL MEDIA &nbsp; • &nbsp;
+      FOLLOW US ON SOCIAL MEDIA &nbsp; • &nbsp;
+      FOLLOW US ON SOCIAL MEDIA &nbsp; • &nbsp;
+      FOLLOW US ON SOCIAL MEDIA &nbsp; • &nbsp;
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="social-cards">
+          <div class="social-card">
+            <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+            <h5>INSTAGRAM</h5>
+            <p>Share visually appealing snippets of our latest web projects.</p>
+          </div>
+
+          <div class="social-card">
+            <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+            <h5>TWITTER</h5>
+            <p>Tweet about interesting coding challenges you've overcome.</p>
+          </div>
+
+          <div class="social-card">
+            <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            <div class="icon"><i class="fa-brands fa-dribbble"></i></div>
+            <h5>DRIBBBLE</h5>
+            <p>Showcase design elements of our web projects.</p>
+          </div>
+
+          <div class="social-card">
+            <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+            <div class="icon"><i class="fa-brands fa-behance"></i></div>
+            <h5>BEHANCE</h5>
+            <p>Create detailed presentations for our projects.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="links-card">
+        <div class="row">
+          <div class="col-6">
+            <h6>Home</h6>
+            <ul>
+              <li>Why Us</li>
+              <li>About Us</li>
+              <li>Testimonials</li>
+              <li>FAQ's</li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h6>Services</h6>
+            <ul>
+              <li>Web Development</li>
+              <li>App Development</li>
+              <li>Web Design</li>
+              <li>Digital Marketing</li>
+            </ul>
+          </div>
+          <div class="col-6 mt-3">
+            <h6>Projects</h6>
+            <ul>
+              <li>Klothink</li>
+              <li>Zenith</li>
+              <li>Novus</li>
+              <li>Apex</li>
+            </ul>
+          </div>
+          <div class="col-6 mt-3">
+            <h6>Blogs</h6>
+            <ul>
+              <li>Business</li>
+              <li>Design <small class="badge bg-secondary text-light">Soon</small></li>
+              <li>Development <small class="badge bg-secondary text-light">Soon</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex; flex-direction:column; gap:18px;">
+          <div class="newsletter">
+            <div style="font-size:12px; color:var(--muted);">NEWSLETTER</div>
+            <div style="font-weight:700; font-size:18px;">SUBSCRIBE TO OUR NEWSLETTER</div>
+            <input placeholder="Enter your email" aria-label="newsletter email">
+            <button class="subscribe-btn" aria-label="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <div style="background:#111; padding:14px; border-radius:10px; border:1px solid #1e1e1e;">
+            <p style="color:var(--muted); margin:0;">Subscribe for updates about our work, new projects, and special offers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2024 NexGen. All rights reserved.</div>
+      <div><a href="#" style="color:var(--muted); text-decoration:none; margin-right:14px;">Terms & Conditions</a> <a href="#" style="color:var(--muted); text-decoration:none;">Privacy Policy</a></div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+  <script>
+    // init phone input if exists
+    (function(){
+      const phone = document.querySelector('#phone');
+      if (phone && window.intlTelInput) {
+        window.intlTelInput(phone, {
+          initialCountry: "in",
+          preferredCountries: ["in","us","ae","eg"],
+          utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+        });
+      }
+    })();
+
+    // FAQ accordion: open one at a time
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      item.querySelector('.faq-q').addEventListener('click', ()=>{
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i=>{
+          i.classList.remove('active');
+          i.querySelector('.faq-toggle').textContent = '+';
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          item.querySelector('.faq-toggle').textContent = '−';
+        }
+      });
+    });
+
+    // social ticker adjustment: duplicate content (for smooth loop)
+    (function(){
+      const track = document.querySelector('.social-ticker .ticker-track');
+      if (track) {
+        track.innerHTML = track.innerHTML + track.innerHTML; // duplicate for continuous animation
+      }
+    })();
+
+    // subscribe / forms (demo: prevent default)
+    document.querySelectorAll('form, .faq-send, .subscribe-btn').forEach(el=>{
+      el.addEventListener('click', function(e){
+        // if it's a button inside a form, let it be handled by the form tag
+      });
+    });
+
+    // simple demo for newsletter subscribe button
+    document.querySelectorAll('.subscribe-btn').forEach(btn=>{
+      btn.addEventListener('click', (ev)=>{
+        ev.preventDefault();
+        const input = btn.closest('.newsletter').querySelector('input');
+        if (input && input.value.trim()==='') {
+          alert('Please enter your email to subscribe.');
+        } else {
+          alert('Subscribed — demo only.');
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
+
+
+
