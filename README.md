@@ -25,7 +25,3 @@ Based on the organized directory structure:
 ## 🚀 Live Demo
 You can view the live website here: [https://agency-website-vy2x.vercel.app](https://agency-website-vy2x.vercel.app)
 
-## 💻 How to Run Locally
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/Habiba-Mohamed5/Agency-Website.git](https://github.com/Habiba-Mohamed5/Agency-Website.git)
